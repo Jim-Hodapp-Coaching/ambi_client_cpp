@@ -1,4 +1,4 @@
-# sensorchi
+# Ambi Client (C++)
 
 An IoT sensor platform based on the [Particle IoT Air Quality Monitoring Kit](https://store.particle.io/products/air-quality-monitoring-kit-wi-fi).
 
