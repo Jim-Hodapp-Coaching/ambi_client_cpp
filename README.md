@@ -80,8 +80,14 @@ Now flash the firmware to your particle device target like so:
 
 Note: again, make sure you replace `ambi1` with your particular device name.
 
+*If for some reason over-the-air (OTA) flashing fails, you can flash over USB like so:*
+
+`particle flash --usb ambi_client_cpp.bin`
+
 # Changing the firmware to point to your Ambi instance
 
 An important step is to make sure that the firmware points to the local IP address of your Ambi web backend. To do that, open the source file `src/sensorchi.ino` and change one or both of the byte arrays `dev_server` or `prod_server`. Note: at this time, full domain or hostnames are not supported and is future work to improve this firmware once Ambi is fully cloud-hosted.
+
+Also make sure that if you're using a the `dev_server` IP address that `#define DEV` is left defined. If you want to use `prod_server`, then just comment out the line `#define DEV`.
 
 Now rebuild and reflash your firmware with it pointing to your local Ambi instance. One tip is to either dedicate a small computer like a Raspberry Pi to host the Ambi backend, or host it in a VM or bare on your development computer. Set your WiFi router to always issue your Ambi host the same IP address based on its MAC address. This way you won't have to keep changing the dev/prod IP address.
