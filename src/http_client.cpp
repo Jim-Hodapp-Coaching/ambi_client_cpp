@@ -147,6 +147,8 @@ uint16_t HttpClient::payloadLength(const JsonWriterStatic<JSON_WRITER_BUFFER_SIZ
         if (buf[i] == '}')
             return i+1;
     }
+
+    return 0;
 }
 
 bool HttpClient::httpResponseEnd()
