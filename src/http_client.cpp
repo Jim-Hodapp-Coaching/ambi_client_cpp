@@ -44,7 +44,7 @@ bool HttpClient::connect()
     }
 
     if (use_host) {
-        Log.info("Connecting to: %s:%d", host, port);
+        Log.info("Connecting to: %s:%d", host.c_str(), port);
         return client.connect(host, port);
     } else if (ip[0] > 0) {
         Log.info("Connecting to: %d.%d.%d.%d:%d", ip[0], ip[1], ip[2], ip[3], port);

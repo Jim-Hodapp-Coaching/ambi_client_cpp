@@ -17,7 +17,7 @@
 #include "SeeedOLED.h"
 
 // Define DEV to point to development server
-#define DEV
+//#define DEV
 
 // This firmware works better with system thread enabled, otherwise it is not
 // initialized until you've already connected to the cloud, which is not as useful.
@@ -29,10 +29,10 @@ HumiditySensor humidity_sensor;
 PressureSensor pressure_sensor;
 TemperatureSensor temp_sensor;
 
-SerialLogHandler serialLogHandler(LOG_LEVEL_INFO);
+SerialLogHandler serialLogHandler(LOG_LEVEL_TRACE);
 
-const byte dev_server[] = { 10, 0, 1, 3 };
-const byte prod_server[] = { 10, 0, 1, 2 };
+const byte dev_server[] = { 192, 168, 1, 252 };
+const byte prod_server[] = { 192, 168, 1, 253 };
 
 HttpClient http_client_dev(dev_server, 4000);
 HttpClient http_client_prod(prod_server, 4000);
