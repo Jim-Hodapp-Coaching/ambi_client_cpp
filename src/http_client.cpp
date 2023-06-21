@@ -125,6 +125,7 @@ bool HttpClient::sendJson(const JsonWriterStatic<JSON_WRITER_BUFFER_SIZE> &json)
     client.print(" HTTP/1.1\r\n");
     client.print("Host: ");
     client.print(use_host ? host : ip.toString());
+    client.print(":");
     client.print(port);
     client.print("\r\n");
     client.print("User-Agent: argon/0.0.1\r\n");
